@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.prime.com.tr/ui">
+    <h:head>
+    	<link type="text/css" rel="stylesheet" href="/livraria/css/ui-lightness/skin.css" />
+        <title>Livraria Virtual</title>
+    </h:head>
+    <h:body>
+    <p:layout fullPage="false">
+        <h:form>
+        
+            <table border="0">
+            	<tr><td rowspan="3" width="50"></td></tr>
+            	<tr><td colspan="3"><h1>Livraria Virtual</h1><br/></td></tr>
+            	<tr><td>
+            	<h:outputText value="Olá #{usuarioControle.usuario.nome} !"/><br/><br/>
+            	
+			     <p:menu style="width:200px">  
+			         <p:submenu label="Livros">  
+			             <p:menuitem value="Cadastrar"   
+			                     url="/livraria/cadastroLivro.jsf"
+			                     update="messages" icon="/images/save.png"/>  
+			             <p:menuitem value="Gerenciar"   
+			                     url="/livraria/listaLivro.jsf"
+			                     update="messages" icon="/images/save.png"/>  
+			             <p:menuitem value="Consultar"   
+			                     url="/livraria/consultaLivro.jsf"
+			                     update="messages" icon="/images/save.png"/>  
+			         </p:submenu>  
+			         <p:submenu label="Arquivos">  
+			             <p:menuitem value="Upload"   
+			                     url="/livraria/cadastroLivro.jsf"
+			                     update="messages" icon="/images/save.png"/>  
+			         </p:submenu>
+			        </p:menu> 
+			       	<br/><br/>
+					<h:commandButton value="Sair" action="#{usuarioControle.deslogar}" /><br/>
+            	</td></tr>
+  			</table>
+        </h:form>
+    </p:layout>
+    </h:body>
+</html>
+
+

@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.prime.com.tr/ui">
+    <h:head>
+        <title>Livraria Virtual</title>
+        <link type="text/css" rel="stylesheet" href="/livraria/css/ui-lightness/skin.css" />
+    </h:head>
+    <h:body>
+    <p:layout fullPage="false">
+        <h:form>
+            <table border="0">
+            	<tr><td rowspan="6" width="50"></td></tr>
+            	<tr><td colspan="3"><h1>Livraria Virtual</h1><br/></td></tr>
+            	<tr><td colspan="3"><h:outputText value="Acesse sua Conta"/><br/><br/></td></tr>
+				<tr>
+            		<td>Usuario:</td>
+            		<td><h:inputText value="#{usuarioControle.usuario.usuario}" maxlength="50" size="20"/></td>
+            	</tr>
+            	<tr>
+            		<td>Senha:</td>
+            		<td><h:inputSecret value="#{usuarioControle.usuario.senha}" maxlength="8" size="10"/></td>
+            	</tr>
+            	<tr>
+            		<td><br/><br/></td>
+            		<td><h:commandButton value="Entra" action="#{usuarioControle.logar}"/></td>
+            	</tr>
+			</table>            
+			
+			<br/><br/>
+            
+            <table border="0">
+            	
+            	<tr><td rowspan="5" width="50"></td></tr>
+            	
+            	<tr><td colspan="3"><h:outputText value="Primeira vez no Livraria Virtual ?"/>
+            	<br/><h:commandLink value="Clique aqui" action="/cadastro/novaConta"/> para criar sua conta !<br/><br/></td></tr>
+            	
+            	<tr><td colspan="3"><br/><br/></td></tr>
+            	
+			</table>             
+            
+        </h:form>
+    </p:layout>
+    </h:body>
+</html>
+

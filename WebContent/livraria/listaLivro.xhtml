@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.prime.com.tr/ui">
+    <h:head>
+        <link type="text/css" rel="stylesheet" href="/livraria/css/ui-lightness/skin.css" />
+        <title>Livraria Virtual</title>
+    </h:head>
+    <h:body>
+    <p:layout fullPage="false">
+            <table border="0">
+            	<tr><td rowspan="4" width="50"></td></tr>
+            	<tr><td colspan="3"><h1>Livraria Virtual</h1><br/></td></tr>
+            	<tr><td colspan="3"><h:outputText value="Relação de Livros Cadastrados"/><br/><br/></td></tr>
+				<tr>
+					<td>
+						<h:form prependId="false">
+				        
+					        <p:dataTable id="tabela1" var="livro"  rendered="#{livroControle.listaLivro}" value="#{livroControle.listarLivros}"> 
+					        
+				            <p:column>
+				                <f:facet name="header">
+				                    <h:outputText value="Título"/>
+				                </f:facet>
+				                <h:outputText value="#{livro.titulo}" />
+				            </p:column>
+				            <p:column>
+				                <f:facet name="header">
+				                    <h:outputText value="Autor"/>
+				                </f:facet>
+				                <h:outputText value="#{livro.autor}"/>
+				            </p:column>
+				            <p:column>
+				                <f:facet name="header">
+				                    <h:outputText value="Páginas"/>
+				                </f:facet>
+				                <h:outputText value="#{livro.paginas}"/>
+				            </p:column>
+				            <p:column>
+				                <f:facet name="header">
+				                    <h:outputText value="Editora"/>
+				                </f:facet>
+				                <h:outputText value="#{livro.editora}"/>
+				            </p:column>
+				            <p:column>
+				                <f:facet name="header">
+				                    <h:outputText value="Isbn"/>
+				                </f:facet>
+				                <h:outputText value="#{livro.isbn}"/>
+				            </p:column>
+				            <p:column colspan="3">
+				                <f:facet name="header">
+				                    <h:outputText value="Ação"/>
+				                </f:facet>
+			                   	<h:commandLink action="#{livroControle.preparaAlteracaoLivro}" value="Alterar" style="color:blue"/>
+				           		&nbsp;
+			                    <h:commandLink action="#{livroControle.excluirLivro}" value="Excluir" style="color:blue"/>
+			                    &nbsp;
+			                    <h:commandLink action="#{livroControle.detalharLivro}" value="Detalhar" style="color:red"/>
+				            </p:column>
+					        </p:dataTable>
+					        
+					        
+					        <p:dataTable id="tabela2" var="livro"  rendered="#{!livroControle.listaLivro}" value="#{livroControle.consultarLivros}"> 
+					        
+				            <p:column>
+				                <f:facet name="header">
+				                    <h:outputText value="Título"/>
+				                </f:facet>
+				                <h:outputText value="#{livro.titulo}" />
+				            </p:column>
+				            <p:column>
+				                <f:facet name="header">
+				                    <h:outputText value="Autor"/>
+				                </f:facet>
+				                <h:outputText value="#{livro.autor}"/>
+				            </p:column>
+				            <p:column>
+				                <f:facet name="header">
+				                    <h:outputText value="Páginas"/>
+				                </f:facet>
+				                <h:outputText value="#{livro.paginas}"/>
+				            </p:column>
+				            <p:column>
+				                <f:facet name="header">
+				                    <h:outputText value="Editora"/>
+				                </f:facet>
+				                <h:outputText value="#{livro.editora}"/>
+				            </p:column>
+				            <p:column>
+				                <f:facet name="header">
+				                    <h:outputText value="Isbn"/>
+				                </f:facet>
+				                <h:outputText value="#{livro.isbn}"/>
+				            </p:column>
+				            <p:column colspan="2">
+				                <f:facet name="header">
+				                    <h:outputText value="Ação"/>
+				                </f:facet>
+			                   	<h:commandLink action="#{livroControle.preparaAlteracaoLivro}" value="Alterar" style="color:blue"/>
+				           		&nbsp;
+			                    <h:commandLink action="#{livroControle.excluirLivro}" value="Excluir" style="color:blue"/>
+				                  &nbsp;
+			                    <h:commandLink action="#{livroControle.detalharLivro}" value="Detalhar" style="color:red"/>
+				            </p:column>
+					        </p:dataTable>					        
+					        
+					        
+					        <br/><br/>
+					        <h:commandButton action="index" value="Voltar" actionListener="#{livroControle.zerarVariaveis}"/>&nbsp;<h:commandButton action="cadastroLivro" value="Incluir Livro" actionListener="#{livroControle.zerarVariaveis}"/>
+				       </h:form>
+				</td></tr>
+			</table>
+    </p:layout>
+    </h:body>
+</html>

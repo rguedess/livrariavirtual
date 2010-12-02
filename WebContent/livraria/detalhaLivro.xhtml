@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.prime.com.tr/ui">
+    <h:head>
+        <title>Livraria Virtual</title>
+        <link type="text/css" rel="stylesheet" href="/livraria/css/ui-lightness/skin.css" />
+    </h:head>
+    <h:body>
+    <p:layout fullPage="false">
+        <h:form>
+            <table border="0">
+            	<tr><td rowspan="8" width="50"></td></tr>
+            	<tr><td colspan="3"><h1>Livraria Virtual</h1><br/></td></tr>
+            	<tr><td colspan="3"><h:outputText value="Detalha de Livro"/><br/><br/></td></tr>
+				<tr>
+            		<td><h:outputText value="#{livroControle.livro.titulo}" maxlength="100" size="50"/></td>
+            	</tr>
+            	<tr>
+					<td><h:outputImage value="#{livroControle.livro.image}" /></td>
+            	</tr>
+            	<tr>
+            		<td><br/><br/><br/><br/></td>
+            		<td><h:commandButton value="Voltar" action="/livraria/index" actionListener="#{livroControle.zerarVariaveis}"/></td>
+            	</tr>
+			</table>
+        </h:form>
+    </p:layout>
+    </h:body>
+</html>
+
